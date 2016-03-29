@@ -4,7 +4,7 @@ import project
 from twilio.rest import TwilioRestClient
 
 ''' [Developed by Michael Hawes, Tony Tran, Henry Tang, Steven son, and Sokghear Lay]''' 
-client = TwilioRestClient('ACfe712cf8d40a3051dbcb283ada0b348e', 'ed3171d5762363af48af7c6361f4563a')
+client = TwilioRestClient('your_key', 'sid')
 
 #Number of frames to throw away while the camera adjusts to light levels
 ramp_frames = 1
@@ -35,7 +35,7 @@ while True:
     cv2.imwrite(file, camera_capture)
     textToSend = project.getTextFromImage(file)
     # Send text message
-    client.messages.create(to='(603) 370-8546', from_='(413) 207-9236', body=textToSend)
+    client.messages.create(to='phone number test will send to', from_='your twilio number', body=textToSend)
 
     
     time.sleep(10)
